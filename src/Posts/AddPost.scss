@@ -1,0 +1,13 @@
+input {
+  background: none;
+  color: inherit;
+  border: 1px dotted #444;
+  border-radius: 5px;
+  padding: 8px;
+  font: inherit;
+  outline: inherit;
+  transition: 0.4s;
+  &:focus {
+    background-color: #aaa;
+  }
+}
