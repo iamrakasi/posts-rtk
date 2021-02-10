@@ -1,4 +1,4 @@
-import {configureStore, createSlice} from '@reduxjs/toolkit'
+import {configureStore, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {Post} from './types'
 
 const initialPosts: Post[] = [
@@ -22,8 +22,23 @@ const initialPosts: Post[] = [
 const postsSlice = createSlice({
   name: 'posts',
   initialState: initialPosts,
-  reducers: {},
+  reducers: {
+    create: (state, {payload}: PayloadAction<{title: string}>) => {
+      const currentLargestId = Math.max.apply(
+        Math,
+        state.map(post => post.id),
+      )
+      console.log('currentLargestId', currentLargestId)
+      state.push({
+        id: currentLargestId + 1,
+        title: payload.title,
+        userId: 1,
+      })
+    },
+  },
 })
+
+export const {create: createPostActionCreator} = postsSlice.actions
 
 export default configureStore({
   reducer: postsSlice.reducer,
