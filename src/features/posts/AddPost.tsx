@@ -2,7 +2,7 @@ import {useRef, useEffect} from 'react'
 import './AddPost.scss'
 import {useForm} from 'react-hook-form'
 import {useDispatch} from 'react-redux'
-import {createPostActionCreator} from '../store'
+import {createPostActionCreator} from './postsSlice'
 
 function AddPost() {
   const {register, handleSubmit, errors, reset} = useForm()

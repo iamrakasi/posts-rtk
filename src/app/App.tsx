@@ -1,7 +1,7 @@
 import React from 'react'
 import {Provider} from 'react-redux'
 import './App.scss'
-import Posts from './Posts'
+import Posts from '../features/posts/Posts'
 import store from './store'
 
 function App() {

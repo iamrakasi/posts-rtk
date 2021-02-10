@@ -1,6 +1,6 @@
 import {useSelector} from 'react-redux'
-import './index.scss'
-import {Post} from '../types'
+import './Posts.scss'
+import {Post} from '../../types'
 import AddPost from './AddPost'
 
 function Posts() {

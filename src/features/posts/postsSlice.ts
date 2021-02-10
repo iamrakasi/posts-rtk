@@ -1,5 +1,5 @@
-import {configureStore, createSlice, PayloadAction} from '@reduxjs/toolkit'
-import {Post} from './types'
+import {Post} from '../../types'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 const initialPosts: Post[] = [
   {
@@ -18,7 +18,6 @@ const initialPosts: Post[] = [
     userId: 1,
   },
 ]
-
 const postsSlice = createSlice({
   name: 'posts',
   initialState: initialPosts,
@@ -40,6 +39,4 @@ const postsSlice = createSlice({
 
 export const {create: createPostActionCreator} = postsSlice.actions
 
-export default configureStore({
-  reducer: postsSlice.reducer,
-})
+export default postsSlice
